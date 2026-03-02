@@ -1,4 +1,4 @@
 export default defineConfig({
-  base: "/portfolio-legacy/",
+  base: "/Portfolio-Legacy/",
   plugins: [react()],
 })
