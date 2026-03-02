@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { ExternalLink, Github, Code2, Palette, Wrench, ChevronDown, ChevronUp } from 'lucide-react';
 
 function App() {
-  const [showTechnical, setShowTechnical] = useState(false);
+  const [showTechnical, setShowTechnical] = useState(true);
   const [activeTab, setActiveTab] = useState('overview');
   const [enlargedImage, setEnlargedImage] = useState(null);
 
