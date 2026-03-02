@@ -450,7 +450,7 @@ StyleExtension.scss`}
           
           <div className="grid grid-cols-1 gap-6">
             <div className="group">
-              <div className="rounded-xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer" onClick={() => setEnlargedImage('https://i.imgur.com/Aqqnt77.jpg')}>
+              <div className="rounded-xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
                     src="https://i.imgur.com/Aqqnt77.jpg"
@@ -466,7 +466,7 @@ StyleExtension.scss`}
             </div>
 
             <div className="group">
-              <div className="rounded-xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer" onClick={() => setEnlargedImage('https://i.imgur.com/J3Rsv43.jpg')}>
+              <div className="rounded-xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
                     src="https://i.imgur.com/J3Rsv43.jpg"
@@ -482,7 +482,7 @@ StyleExtension.scss`}
             </div>
 
             <div className="group">
-              <div className="rounded-xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer" onClick={() => setEnlargedImage('https://i.imgur.com/EUrbxFu.jpg')}>
+              <div className="rounded-xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
                     src="https://i.imgur.com/EUrbxFu.jpg"
