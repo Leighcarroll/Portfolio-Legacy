@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { ExternalLink, Github, Code2, Palette, Wrench, ChevronDown, ChevronUp } from 'lucide-react';
 
 function App() {
-  const [showTechnical, setShowTechnical] = useState(false);
+  const [showTechnical, setShowTechnical] = useState(true);
   const [activeTab, setActiveTab] = useState('overview');
   const [enlargedImage, setEnlargedImage] = useState(null);
 
@@ -165,7 +165,8 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
             <h3 className="text-2xl font-bold text-slate-900 mb-8 text-center">More Shop Redesigns</h3>
             <div className="grid md:grid-cols-2 gap-8">
               {/* Shop 1 */}
-              <div className="space-y-4">
+              <div className="space-y-4 p-6 bg-slate-50 rounded-xl border-2 border-slate-200">
+                <h4 className="text-lg font-semibold text-slate-900 mb-4">Shop 1</h4>
                 <div className="relative">
                   <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
                     BEFORE
@@ -195,7 +196,8 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
               </div>
 
               {/* Shop 2 */}
-              <div className="space-y-4">
+              <div className="space-y-4 p-6 bg-slate-50 rounded-xl border-2 border-slate-200">
+                <h4 className="text-lg font-semibold text-slate-900 mb-4">Shop 2</h4>
                 <div className="relative">
                   <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
                     BEFORE
@@ -225,7 +227,8 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
               </div>
 
               {/* Shop 3 */}
-              <div className="space-y-4">
+              <div className="space-y-4 p-6 bg-slate-50 rounded-xl border-2 border-slate-200">
+                <h4 className="text-lg font-semibold text-slate-900 mb-4">Shop 3</h4>
                 <div className="relative">
                   <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
                     BEFORE
@@ -255,7 +258,8 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
               </div>
 
               {/* Shop 4 */}
-              <div className="space-y-4">
+              <div className="space-y-4 p-6 bg-slate-50 rounded-xl border-2 border-slate-200">
+                <h4 className="text-lg font-semibold text-slate-900 mb-4">Shop 4</h4>
                 <div className="relative">
                   <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
                     BEFORE
