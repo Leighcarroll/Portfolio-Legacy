@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { ExternalLink, Github, Code2, Palette, Wrench, ChevronDown, ChevronUp } from 'lucide-react';
 
 function App() {
-  const [showTechnical, setShowTechnical] = useState(true);
+  const [showTechnical, setShowTechnical] = useState(false);
   const [activeTab, setActiveTab] = useState('overview');
   const [enlargedImage, setEnlargedImage] = useState(null);
 
@@ -65,7 +65,7 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Hero Section - Full Screen */}
-      <div className="relative h-[750px] bg-gradient-to-br from-[#59a1a4] via-[#1e324b] to-[#1e324b]">
+      <div className="relative h-[500px] bg-gradient-to-br from-[#59a1a4] via-[#1e324b] to-[#1e324b]">
         {/* Hero background image */}
         <div className="absolute inset-0">
           <img 
@@ -91,13 +91,22 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a 
+                href="https://github.com/yourusername/project" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-900 rounded-lg font-medium hover:bg-slate-100 transition-colors"
+              >
+                <Github size={20} />
+                View Code
+              </a>
+              <a 
                 href="https://www.hafengeburtstag24.de/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white text-white rounded-lg font-medium hover:bg-white hover:text-slate-900 transition-colors"
               >
                 <ExternalLink size={20} />
-                View Shop
+                Live Demo
               </a>
             </div>
           </div>
@@ -150,28 +159,130 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Quick Stats */}
-      <div className="bg-gradient-to-r from-[#59a1a4] to-[#1e324b] py-16">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
-            <div>
-              <div className="text-3xl md:text-4xl font-bold mb-1">2010</div>
-              <div className="text-sm md:text-base text-blue-100">Platform Year</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold mb-1">7</div>
-              <div className="text-sm md:text-base text-blue-100">Breakpoints</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold mb-1">100%</div>
-              <div className="text-sm md:text-base text-blue-100">Mobile Responsive</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold mb-1">Custom</div>
-              <div className="text-sm md:text-base text-blue-100">JavaScript Features</div>
+          {/* Additional Shops Gallery */}
+          <div className="mt-16">
+            <h3 className="text-2xl font-bold text-slate-900 mb-8 text-center">More Shop Redesigns</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Shop 1 */}
+              <div className="space-y-4">
+                <div className="relative">
+                  <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
+                    BEFORE
+                  </div>
+                  <div className="rounded-lg overflow-hidden border-2 border-slate-300 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/L6mJSnj.jpg')}>
+                    <img 
+                      src="https://i.imgur.com/L6mJSnj.jpg"
+                      alt="Shop 1 before"
+                      className="w-full object-cover object-top"
+                      style={{ height: '400px' }}
+                    />
+                  </div>
+                </div>
+                <div className="relative">
+                  <div className="absolute -top-3 left-3 bg-green-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
+                    AFTER
+                  </div>
+                  <div className="rounded-lg overflow-hidden border-2 border-blue-500 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/NE3OmUx.jpg')}>
+                    <img 
+                      src="https://i.imgur.com/NE3OmUx.jpg"
+                      alt="Shop 1 after"
+                      className="w-full object-cover object-top"
+                      style={{ height: '400px' }}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Shop 2 */}
+              <div className="space-y-4">
+                <div className="relative">
+                  <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
+                    BEFORE
+                  </div>
+                  <div className="rounded-lg overflow-hidden border-2 border-slate-300 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/Jn3yEsc.jpg')}>
+                    <img 
+                      src="https://i.imgur.com/Jn3yEsc.jpg"
+                      alt="Shop 2 before"
+                      className="w-full object-cover object-top"
+                      style={{ height: '400px' }}
+                    />
+                  </div>
+                </div>
+                <div className="relative">
+                  <div className="absolute -top-3 left-3 bg-green-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
+                    AFTER
+                  </div>
+                  <div className="rounded-lg overflow-hidden border-2 border-blue-500 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/Mk04P6J.jpg')}>
+                    <img 
+                      src="https://i.imgur.com/Mk04P6J.jpg"
+                      alt="Shop 2 after"
+                      className="w-full object-cover object-top"
+                      style={{ height: '400px' }}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Shop 3 */}
+              <div className="space-y-4">
+                <div className="relative">
+                  <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
+                    BEFORE
+                  </div>
+                  <div className="rounded-lg overflow-hidden border-2 border-slate-300 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/igPyJ1d.jpg')}>
+                    <img 
+                      src="https://i.imgur.com/igPyJ1d.jpg"
+                      alt="Shop 3 before"
+                      className="w-full object-cover object-top"
+                      style={{ height: '400px' }}
+                    />
+                  </div>
+                </div>
+                <div className="relative">
+                  <div className="absolute -top-3 left-3 bg-green-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
+                    AFTER
+                  </div>
+                  <div className="rounded-lg overflow-hidden border-2 border-blue-500 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/5bzZEHy.jpg')}>
+                    <img 
+                      src="https://i.imgur.com/5bzZEHy.jpg"
+                      alt="Shop 3 after"
+                      className="w-full object-cover object-top"
+                      style={{ height: '400px' }}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Shop 4 */}
+              <div className="space-y-4">
+                <div className="relative">
+                  <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
+                    BEFORE
+                  </div>
+                  <div className="rounded-lg overflow-hidden border-2 border-slate-300 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/pI4Fi7d.jpg')}>
+                    <img 
+                      src="https://i.imgur.com/pI4Fi7d.jpg"
+                      alt="Shop 4 before"
+                      className="w-full object-cover object-top"
+                      style={{ height: '400px' }}
+                    />
+                  </div>
+                </div>
+                <div className="relative">
+                  <div className="absolute -top-3 left-3 bg-green-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
+                    AFTER
+                  </div>
+                  <div className="rounded-lg overflow-hidden border-2 border-blue-500 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/CxrWEAZ.jpg')}>
+                    <img 
+                      src="https://i.imgur.com/CxrWEAZ.jpg"
+                      alt="Shop 4 after"
+                      className="w-full object-cover object-top"
+                      style={{ height: '400px' }}
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -450,7 +561,7 @@ StyleExtension.scss`}
           
           <div className="grid grid-cols-1 gap-6">
             <div className="group">
-              <div className="rounded-xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300">
+              <div className="rounded-xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer" onClick={() => setEnlargedImage('https://i.imgur.com/Aqqnt77.jpg')}>
                 <div className="aspect-video overflow-hidden">
                   <img 
                     src="https://i.imgur.com/Aqqnt77.jpg"
@@ -466,7 +577,7 @@ StyleExtension.scss`}
             </div>
 
             <div className="group">
-              <div className="rounded-xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300">
+              <div className="rounded-xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer" onClick={() => setEnlargedImage('https://i.imgur.com/J3Rsv43.jpg')}>
                 <div className="aspect-video overflow-hidden">
                   <img 
                     src="https://i.imgur.com/J3Rsv43.jpg"
@@ -482,7 +593,7 @@ StyleExtension.scss`}
             </div>
 
             <div className="group">
-              <div className="rounded-xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300">
+              <div className="rounded-xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer" onClick={() => setEnlargedImage('https://i.imgur.com/EUrbxFu.jpg')}>
                 <div className="aspect-video overflow-hidden">
                   <img 
                     src="https://i.imgur.com/EUrbxFu.jpg"
@@ -511,7 +622,7 @@ StyleExtension.scss`}
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a 
-              href="https://github.com/Leighcarroll" 
+              href="https://github.com/yourusername" 
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-900 rounded-lg font-medium hover:bg-slate-100 transition-colors text-lg"
