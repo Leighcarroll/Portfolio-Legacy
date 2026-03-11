@@ -118,9 +118,21 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
         </div>
       </div>
 
+      {/* Introduction Section */}
+      <div className="bg-slate-50 py-16 md:py-24">
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
+          <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+            Implementing a SCSS template for custom shop design
+          </h1>
+          <p className="text-lg text-slate-700 leading-relaxed">
+            As a web designer I create custom shop designs for ecommerce shops, often for shops that use antiquated legacy software. This requires that a lot of additional styling needs to be added to a shop to make it look good, not just a few lines of CSS. With the help of some friends in Finland, in 2024 I started using a SCSS template to style custom shops. The template adds a basic 'skin' update to the shop, and I can add custom SCSS and JavaScript to fully customize the shop. The code is modular and implements easily adaptable variables and mixins to efficiently create unique branding, and interface tweaks for each store, transforming a shared codebase into multiple differentiated storefronts. Here are a few examples of the befores and afters of shops I transformed using the same base code, as well as a few of the specific challenges faced by using this template.
+          </p>
+        </div>
+      </div>
+
       {/* Before & After Section */}
       <div className="bg-white py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="max-w-full mx-auto px-4 md:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               Before & After
