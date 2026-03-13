@@ -8,6 +8,27 @@ function App() {
   const [showTechnical, setShowTechnical] = useState(true);
   const [activeTab, setActiveTab] = useState('overview');
   const [enlargedImage, setEnlargedImage] = useState(null);
+  const [sliderPosition, setSliderPosition] = useState(50);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const handleSliderMove = (e) => {
+    if (!isDragging) return;
+    
+    const container = e.currentTarget;
+    const rect = container.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const percentage = (x / rect.width) * 100;
+    
+    setSliderPosition(Math.min(Math.max(percentage, 0), 100));
+  };
+
+  const handleSliderStart = () => {
+    setIsDragging(true);
+  };
+
+  const handleSliderEnd = () => {
+    setIsDragging(false);
+  };
 
   const sassCode = `// _var-media-queries.scss
 // Media screen breakpoints used in mixins
@@ -142,43 +163,64 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 gap-8 items-center">
-            {/* Before */}
-            <div className="relative">
-              <div className="absolute -top-4 left-4 bg-red-500 text-white px-4 py-2 rounded-lg font-bold text-sm z-10">
-                BEFORE
-              </div>
-              <div className="rounded-xl overflow-hidden border-4 border-slate-300 shadow-lg cursor-pointer" onClick={() => setEnlargedImage('https://i.imgur.com/mqskxHX.jpg')}>
+          {/* Main Before/After Slider */}
+          <div className="max-w-6xl mx-auto mb-16">
+            <div 
+              className="relative w-full aspect-video overflow-hidden rounded-xl shadow-2xl cursor-ew-resize select-none"
+              onMouseMove={handleSliderMove}
+              onMouseDown={handleSliderStart}
+              onMouseUp={handleSliderEnd}
+              onMouseLeave={handleSliderEnd}
+            >
+              {/* After Image (Full) */}
+              <img 
+                src="https://i.imgur.com/t34FRLw.jpg"
+                alt="After redesign"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              
+              {/* Before Image (Clipped) */}
+              <div 
+                className="absolute inset-0 overflow-hidden"
+                style={{ width: `${sliderPosition}%` }}
+              >
                 <img 
                   src="https://i.imgur.com/mqskxHX.jpg"
                   alt="Before redesign"
-                  className="w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{ width: '100vw', maxWidth: 'none' }}
                 />
               </div>
-            </div>
-            
-            {/* After */}
-            <div className="relative">
-              <div className="absolute -top-4 left-4 bg-green-500 text-white px-4 py-2 rounded-lg font-bold text-sm z-10">
+              
+              {/* Slider Handle */}
+              <div 
+                className="absolute top-0 bottom-0 w-1 bg-white shadow-lg"
+                style={{ left: `${sliderPosition}%` }}
+              >
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center">
+                  <div className="flex gap-1">
+                    <div className="w-0.5 h-6 bg-slate-400"></div>
+                    <div className="w-0.5 h-6 bg-slate-400"></div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Labels */}
+              <div className="absolute top-4 left-4 bg-red-500 text-white px-4 py-2 rounded-lg font-bold text-sm">
+                BEFORE
+              </div>
+              <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-bold text-sm">
                 AFTER
-              </div>
-              <div className="rounded-xl overflow-hidden border-4 border-blue-500 shadow-2xl cursor-pointer" onClick={() => setEnlargedImage('https://i.imgur.com/t34FRLw.jpg')}>
-                <img 
-                  src="https://i.imgur.com/t34FRLw.jpg"
-                  alt="After redesign"
-                  className="w-full h-full object-cover"
-                />
               </div>
             </div>
           </div>
 
-          {/* Additional Shops Gallery */}
+          {/* Additional Shops Gallery - Side by Side */}
           <div className="mt-16">
             <h3 className="text-2xl font-bold text-slate-900 mb-8 text-center">More Shop Redesigns</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Shop 1 */}
-              <div className="space-y-4 p-6 bg-slate-50 rounded-xl border-2 border-slate-200">
-                <h4 className="text-lg font-semibold text-slate-900 mb-4">Shop 1</h4>
+            <div className="max-w-6xl mx-auto space-y-8">
+              {/* Shop 1 - Side by Side */}
+              <div className="grid md:grid-cols-2 gap-6">
                 <div className="relative">
                   <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
                     BEFORE
@@ -207,9 +249,8 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
                 </div>
               </div>
 
-              {/* Shop 2 */}
-              <div className="space-y-4 p-6 bg-slate-50 rounded-xl border-2 border-slate-200">
-                <h4 className="text-lg font-semibold text-slate-900 mb-4">Shop 2</h4>
+              {/* Shop 2 - Side by Side */}
+              <div className="grid md:grid-cols-2 gap-6">
                 <div className="relative">
                   <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
                     BEFORE
@@ -238,9 +279,8 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
                 </div>
               </div>
 
-              {/* Shop 3 */}
-              <div className="space-y-4 p-6 bg-slate-50 rounded-xl border-2 border-slate-200">
-                <h4 className="text-lg font-semibold text-slate-900 mb-4">Shop 3</h4>
+              {/* Shop 3 - Side by Side */}
+              <div className="grid md:grid-cols-2 gap-6">
                 <div className="relative">
                   <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
                     BEFORE
@@ -269,9 +309,8 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
                 </div>
               </div>
 
-              {/* Shop 4 */}
-              <div className="space-y-4 p-6 bg-slate-50 rounded-xl border-2 border-slate-200">
-                <h4 className="text-lg font-semibold text-slate-900 mb-4">Shop 4</h4>
+              {/* Shop 4 - Side by Side */}
+              <div className="grid md:grid-cols-2 gap-6">
                 <div className="relative">
                   <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
                     BEFORE
@@ -303,6 +342,7 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
           </div>
         </div>
       </div>
+      )}
 
       {/* Technical Details - Collapsible */}
       <div className="bg-white py-16 md:py-24">
@@ -563,7 +603,8 @@ StyleExtension.scss`}
         </div>
       </div>
 
-      {/* Visual Showcase Grid */}
+      {/* Visual Showcase Grid - HIDDEN */}
+      {false && (
       <div className="bg-slate-100 py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center mb-12">
