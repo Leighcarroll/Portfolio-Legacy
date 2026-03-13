@@ -1,6 +1,3 @@
-// FILE 1: src/App.jsx
-// Copy this entire file
-
 import React, { useState } from 'react';
 import { ExternalLink, Github, Code2, Palette, Wrench, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -31,7 +28,6 @@ function App() {
   };
 
   const sassCode = `// _var-media-queries.scss
-// Media screen breakpoints used in mixins
 $media: (
   xxs: 0.0125rem,
   xs: 21.875rem,
@@ -43,51 +39,23 @@ $media: (
 );
 
 // _var-theme.scss
-// Root font size for rem calculations
 $root-font-size: 16px;
-$font: var(--system-ui);
-$line-height: 1.5;
-
-// Colors linked to design system
 $primary: var(--vilkas-design-theme-color-primary);
-$secondary: var(--vilkas-design-theme-color-secondary);
-$accent: var(--vilkas-design-theme-color-accent);
-$black: var(--vilkas-design-theme-color-black);
-$white: var(--vilkas-design-theme-color-white);
-
-// Spacing & sizing
-$button-padding: 0.5rem 1.25rem;
 $border-radius: 3px;
 $transition: 300ms ease-in-out;`;
 
-  const jsSnippet = `// Sticky header implementation
-const initStickyHeader = () => {
-  const header = document.querySelector('.site-header');
-  let lastScroll = 0;
-
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-      header.classList.add('sticky');
-    } else {
-      header.classList.remove('sticky');
-    }
-    
-    lastScroll = currentScroll;
-  });
-};
-
-// Back to top button
-document.querySelector('.back-to-top').addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  const jsSnippet = `// Sticky header
+const header = document.querySelector('.site-header');
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 100) {
+    header.classList.add('sticky');
+  }
 });`;
 
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* Hero Section - Full Screen */}
+      {/* Hero Section */}
       <div className="relative h-[500px] bg-gradient-to-br from-[#59a1a4] via-[#1e324b] to-[#1e324b]">
-        {/* Hero background image */}
         <div className="absolute inset-0">
           <img 
             src="https://i.imgur.com/zsJAF3W.jpg"
@@ -133,7 +101,6 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
           </div>
         </div>
         
-        {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce z-10">
           <ChevronDown size={32} />
         </div>
@@ -151,7 +118,7 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
         </div>
       </div>
 
-      {/* Before & After Section */}
+      {/* Before & After Slider */}
       <div className="bg-white py-16 md:py-24">
         <div className="max-w-full mx-auto px-4 md:px-8">
           <div className="text-center mb-12">
@@ -163,7 +130,6 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
             </p>
           </div>
           
-          {/* Main Before/After Slider */}
           <div className="max-w-6xl mx-auto mb-16">
             <div 
               className="relative w-full aspect-video overflow-hidden rounded-xl shadow-2xl cursor-ew-resize select-none"
@@ -172,14 +138,12 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
               onMouseUp={handleSliderEnd}
               onMouseLeave={handleSliderEnd}
             >
-              {/* After Image (Full) */}
               <img 
                 src="https://i.imgur.com/t34FRLw.jpg"
                 alt="After redesign"
                 className="absolute inset-0 w-full h-full object-cover"
               />
               
-              {/* Before Image (Clipped) */}
               <div 
                 className="absolute inset-0 overflow-hidden"
                 style={{ width: `${sliderPosition}%` }}
@@ -187,12 +151,10 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
                 <img 
                   src="https://i.imgur.com/mqskxHX.jpg"
                   alt="Before redesign"
-                  className="absolute inset-0 w-full h-full object-cover"
-                  style={{ width: '100vw', maxWidth: 'none' }}
+                  className="w-full h-full object-cover"
                 />
               </div>
               
-              {/* Slider Handle */}
               <div 
                 className="absolute top-0 bottom-0 w-1 bg-white shadow-lg"
                 style={{ left: `${sliderPosition}%` }}
@@ -205,7 +167,6 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
                 </div>
               </div>
               
-              {/* Labels */}
               <div className="absolute top-4 left-4 bg-red-500 text-white px-4 py-2 rounded-lg font-bold text-sm">
                 BEFORE
               </div>
@@ -215,11 +176,12 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
             </div>
           </div>
 
-          {/* Additional Shops Gallery - Side by Side */}
+          {/* More Shops - Side by Side */}
           <div className="mt-16">
             <h3 className="text-2xl font-bold text-slate-900 mb-8 text-center">More Shop Redesigns</h3>
             <div className="max-w-6xl mx-auto space-y-8">
-              {/* Shop 1 - Side by Side */}
+              
+              {/* Shop 1 */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="relative">
                   <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
@@ -229,8 +191,7 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
                     <img 
                       src="https://i.imgur.com/L6mJSnj.jpg"
                       alt="Shop 1 before"
-                      className="w-full object-cover object-top"
-                      style={{ height: '400px' }}
+                      className="w-full object-cover object-top h-[400px]"
                     />
                   </div>
                 </div>
@@ -242,14 +203,13 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
                     <img 
                       src="https://i.imgur.com/NE3OmUx.jpg"
                       alt="Shop 1 after"
-                      className="w-full object-cover object-top"
-                      style={{ height: '400px' }}
+                      className="w-full object-cover object-top h-[400px]"
                     />
                   </div>
                 </div>
               </div>
 
-              {/* Shop 2 - Side by Side */}
+              {/* Shop 2 */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="relative">
                   <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
@@ -259,8 +219,7 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
                     <img 
                       src="https://i.imgur.com/Jn3yEsc.jpg"
                       alt="Shop 2 before"
-                      className="w-full object-cover object-top"
-                      style={{ height: '400px' }}
+                      className="w-full object-cover object-top h-[400px]"
                     />
                   </div>
                 </div>
@@ -272,14 +231,13 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
                     <img 
                       src="https://i.imgur.com/Mk04P6J.jpg"
                       alt="Shop 2 after"
-                      className="w-full object-cover object-top"
-                      style={{ height: '400px' }}
+                      className="w-full object-cover object-top h-[400px]"
                     />
                   </div>
                 </div>
               </div>
 
-              {/* Shop 3 - Side by Side */}
+              {/* Shop 3 */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="relative">
                   <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
@@ -289,8 +247,7 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
                     <img 
                       src="https://i.imgur.com/igPyJ1d.jpg"
                       alt="Shop 3 before"
-                      className="w-full object-cover object-top"
-                      style={{ height: '400px' }}
+                      className="w-full object-cover object-top h-[400px]"
                     />
                   </div>
                 </div>
@@ -302,14 +259,13 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
                     <img 
                       src="https://i.imgur.com/5bzZEHy.jpg"
                       alt="Shop 3 after"
-                      className="w-full object-cover object-top"
-                      style={{ height: '400px' }}
+                      className="w-full object-cover object-top h-[400px]"
                     />
                   </div>
                 </div>
               </div>
 
-              {/* Shop 4 - Side by Side */}
+              {/* Shop 4 */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="relative">
                   <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
@@ -319,8 +275,7 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
                     <img 
                       src="https://i.imgur.com/pI4Fi7d.jpg"
                       alt="Shop 4 before"
-                      className="w-full object-cover object-top"
-                      style={{ height: '400px' }}
+                      className="w-full object-cover object-top h-[400px]"
                     />
                   </div>
                 </div>
@@ -332,19 +287,18 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
                     <img 
                       src="https://i.imgur.com/CxrWEAZ.jpg"
                       alt="Shop 4 after"
-                      className="w-full object-cover object-top"
-                      style={{ height: '400px' }}
+                      className="w-full object-cover object-top h-[400px]"
                     />
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
       </div>
-      )}
 
-      {/* Technical Details - Collapsible */}
+      {/* Technical Details */}
       <div className="bg-white py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           <div className="text-center mb-12">
@@ -375,7 +329,6 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
 
           {showTechnical && (
             <div className="space-y-6">
-              {/* Navigation Tabs */}
               <div className="bg-white rounded-2xl shadow-lg">
                 <div className="border-b border-slate-200">
                   <div className="flex overflow-x-auto">
@@ -469,68 +422,14 @@ document.querySelector('.back-to-top').addEventListener('click', () => {
                       <div>
                         <h2 className="text-2xl font-bold text-slate-900 mb-3">Sass Architecture</h2>
                         <p className="text-slate-700 leading-relaxed mb-4">
-                          Worked within an established Sass system to implement custom styling and functionality. This required a deep understanding of the existing architecture, writing new components that integrated seamlessly with the design system, and using an adapted legacy code cartridge to meet modern requirements.
+                          Worked within an established Sass system to implement custom styling and functionality.
                         </p>
                       </div>
 
                       <div className="bg-slate-900 rounded-xl p-6 overflow-x-auto">
-                        <div className="flex items-center justify-between mb-4">
-                          <span className="text-slate-400 text-sm font-mono">partials/abstracts/variables/</span>
-                          <span className="text-xs text-slate-500">Sass/SCSS</span>
-                        </div>
                         <pre className="text-sm">
                           <code className="text-green-400 font-mono">{sassCode}</code>
                         </pre>
-                      </div>
-
-                      <div className="grid md:grid-cols-2 gap-4">
-                        <div className="bg-slate-50 rounded-xl p-5">
-                          <h4 className="font-bold text-slate-900 mb-2">File Structure</h4>
-                          <pre className="text-sm text-slate-700 font-mono">
-{`scss/
-└── partials/
-    ├── abstracts/
-    │   ├── variables/
-    │   │   ├── _var-media-queries.scss
-    │   │   └── _var-theme.scss
-    │   └── mixins/
-    │       └── _mix-media-queries.scss
-    ├── base/
-    ├── checkout/
-    ├── components/
-    ├── content-elements/
-    ├── custom-elements/
-    ├── pages/
-    ├── product-list/
-    ├── product-page/
-    └── theme-layout/
-StyleExtension.scss`}
-                          </pre>
-                        </div>
-
-                        <div className="bg-slate-50 rounded-xl p-5">
-                          <h4 className="font-bold text-slate-900 mb-3">My Contributions</h4>
-                          <ul className="space-y-2 text-slate-700 text-sm">
-                            <li className="flex items-start gap-2">
-                              <span className="text-blue-600 mt-0.5">✓</span>
-                              <span>Added custom components within existing Sass structure</span>
-                            </li>
-                            <li className="flex items-start gap-2">
-                              <span className="text-blue-600 mt-0.5">✓</span>
-                              <span>Wrote JavaScript for custom interactions and animations</span>
-                            </li>
-                            <li className="flex items-start gap-2">
-                              <span className="text-blue-600 mt-0.5">✓</span>
-                              <span>Maintained consistency with existing branding and design systems</span>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-
-                      <div className="bg-blue-50 border-l-4 border-blue-600 rounded-r-xl p-5">
-                        <p className="text-slate-700">
-                          <strong className="text-blue-900">Working with Existing Systems:</strong> This project required diving into an established Sass architecture and Vilkas design system. Rather than rebuilding from scratch, I learned to work within existing constraints, add new functionality through custom partials and JavaScript, and bridge legacy code with modern styling approaches.
-                        </p>
                       </div>
                     </div>
                   )}
@@ -540,56 +439,11 @@ StyleExtension.scss`}
                       <div>
                         <h2 className="text-2xl font-bold text-slate-900 mb-3">Technical Challenges</h2>
                         <p className="text-slate-700 leading-relaxed">
-                          Working with legacy systems requires creative problem-solving and a deep understanding of both modern best practices and older architectural patterns.
+                          Working with legacy systems requires creative problem-solving.
                         </p>
                       </div>
 
-                      <div className="space-y-4">
-                        <div className="border border-slate-200 rounded-xl p-6">
-                          <h3 className="text-lg font-bold text-slate-900 mb-2">Challenge: Legacy Backend Constraints</h3>
-                          <p className="text-slate-700 mb-3">
-                            The existing system used inline styles and table-based layouts from 2010, making it difficult to apply modern CSS without breaking functionality.
-                          </p>
-                          <div className="bg-green-50 border-l-4 border-green-600 rounded-r-lg p-4">
-                            <p className="text-sm font-medium text-green-900 mb-1">Solution</p>
-                            <p className="text-sm text-green-800">
-                              Created a CSS reset strategy with highly specific selectors to override legacy styles without modifying backend templates. Used CSS custom properties to inject modern styling into old markup patterns.
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="border border-slate-200 rounded-xl p-6">
-                          <h3 className="text-lg font-bold text-slate-900 mb-2">Challenge: No Build Tool Access</h3>
-                          <p className="text-slate-700 mb-3">
-                            The production environment didn't support modern build tools, requiring manual Sass compilation and careful file management.
-                          </p>
-                          <div className="bg-green-50 border-l-4 border-green-600 rounded-r-lg p-4">
-                            <p className="text-sm font-medium text-green-900 mb-1">Solution</p>
-                            <p className="text-sm text-green-800">
-                              Set up local compilation workflow with npm scripts and created thorough documentation for the deployment process. Implemented a modular Sass structure that compiled to a single minified CSS file for production.
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="border border-slate-200 rounded-xl p-6">
-                          <h3 className="text-lg font-bold text-slate-900 mb-2">Challenge: Custom Functionality Requests</h3>
-                          <p className="text-slate-700 mb-3">
-                            Clients frequently requested custom features that weren't built into the platform, such as sticky navigation, adapted product sliders, and enhanced user interface elements.
-                          </p>
-                          <div className="bg-green-50 border-l-4 border-green-600 rounded-r-lg p-4">
-                            <p className="text-sm font-medium text-green-900 mb-1">Solution</p>
-                            <p className="text-sm text-green-800">
-                              Wrote vanilla JavaScript to add client-specific functionality including sticky headers, back-to-top buttons, and adapted image/product sliders integrated with JSON data. Combined CSS animations with JavaScript triggers for smooth, performant interactions.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-
                       <div className="bg-slate-900 rounded-xl p-6 overflow-x-auto">
-                        <div className="flex items-center justify-between mb-4">
-                          <span className="text-slate-400 text-sm font-mono">scripts/custom-features.js</span>
-                          <span className="text-xs text-slate-500">JavaScript</span>
-                        </div>
                         <pre className="text-sm">
                           <code className="text-yellow-400 font-mono">{jsSnippet}</code>
                         </pre>
@@ -600,71 +454,6 @@ StyleExtension.scss`}
               </div>
             </div>
           )}
-        </div>
-      </div>
-
-      {/* Visual Showcase Grid - HIDDEN */}
-      {false && (
-      <div className="bg-slate-100 py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Visual Showcase
-            </h2>
-            <p className="text-lg text-slate-600">
-              Responsive layouts, custom interactions, and modern design
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 gap-6">
-            <div className="group">
-              <div className="rounded-xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer" onClick={() => setEnlargedImage('https://i.imgur.com/Aqqnt77.jpg')}>
-                <div className="aspect-video overflow-hidden">
-                  <img 
-                    src="https://i.imgur.com/Aqqnt77.jpg"
-                    alt="Mobile Homepage"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-4">
-                  <h3 className="font-bold text-slate-900 mb-1">Mobile Homepage</h3>
-                  <p className="text-sm text-slate-600">Fully responsive layout</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="group">
-              <div className="rounded-xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer" onClick={() => setEnlargedImage('https://i.imgur.com/J3Rsv43.jpg')}>
-                <div className="aspect-video overflow-hidden">
-                  <img 
-                    src="https://i.imgur.com/J3Rsv43.jpg"
-                    alt="Product Detail Page"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-4">
-                  <h3 className="font-bold text-slate-900 mb-1">Product Detail Page</h3>
-                  <p className="text-sm text-slate-600">Modern card layouts</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="group">
-              <div className="rounded-xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer" onClick={() => setEnlargedImage('https://i.imgur.com/EUrbxFu.jpg')}>
-                <div className="aspect-video overflow-hidden">
-                  <img 
-                    src="https://i.imgur.com/EUrbxFu.jpg"
-                    alt="Checkout Flow"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-4">
-                  <h3 className="font-bold text-slate-900 mb-1">Checkout Flow</h3>
-                  <p className="text-sm text-slate-600">Accessible form design</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
