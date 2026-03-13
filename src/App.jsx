@@ -131,6 +131,7 @@ window.addEventListener('scroll', () => {
           </div>
           
           <div className="max-w-6xl mx-auto mb-16">
+            <h3 className="text-xl font-bold text-slate-900 mb-4 text-center">Hafengeburtstag24, shop created in 2008</h3>
             <div 
               className="relative w-full aspect-video overflow-hidden rounded-xl shadow-2xl cursor-ew-resize select-none"
               onMouseMove={handleSliderMove}
@@ -182,113 +183,125 @@ window.addEventListener('scroll', () => {
             <div className="max-w-6xl mx-auto space-y-8">
               
               {/* Shop 1 */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="relative">
-                  <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
-                    BEFORE
+              <div className="p-6 bg-slate-50 rounded-xl border-2 border-slate-200">
+                <h4 className="text-lg font-semibold text-slate-900 mb-6">S-Tec Sports, shop created 2008</h4>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="relative">
+                    <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
+                      BEFORE
+                    </div>
+                    <div className="rounded-lg overflow-hidden border-2 border-slate-300 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/L6mJSnj.jpg')}>
+                      <img 
+                        src="https://i.imgur.com/L6mJSnj.jpg"
+                        alt="Shop 1 before"
+                        className="w-full object-cover object-top h-[400px]"
+                      />
+                    </div>
                   </div>
-                  <div className="rounded-lg overflow-hidden border-2 border-slate-300 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/L6mJSnj.jpg')}>
-                    <img 
-                      src="https://i.imgur.com/L6mJSnj.jpg"
-                      alt="Shop 1 before"
-                      className="w-full object-cover object-top h-[400px]"
-                    />
-                  </div>
-                </div>
-                <div className="relative">
-                  <div className="absolute -top-3 left-3 bg-green-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
-                    AFTER
-                  </div>
-                  <div className="rounded-lg overflow-hidden border-2 border-blue-500 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/NE3OmUx.jpg')}>
-                    <img 
-                      src="https://i.imgur.com/NE3OmUx.jpg"
-                      alt="Shop 1 after"
-                      className="w-full object-cover object-top h-[400px]"
-                    />
+                  <div className="relative">
+                    <div className="absolute -top-3 left-3 bg-green-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
+                      AFTER
+                    </div>
+                    <div className="rounded-lg overflow-hidden border-2 border-blue-500 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/NE3OmUx.jpg')}>
+                      <img 
+                        src="https://i.imgur.com/NE3OmUx.jpg"
+                        alt="Shop 1 after"
+                        className="w-full object-cover object-top h-[400px]"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Shop 2 */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="relative">
-                  <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
-                    BEFORE
+              <div className="p-6 bg-slate-50 rounded-xl border-2 border-slate-200">
+                <h4 className="text-lg font-semibold text-slate-900 mb-6">Selbstklebe-Filz, shop created 2014</h4>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="relative">
+                    <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
+                      BEFORE
+                    </div>
+                    <div className="rounded-lg overflow-hidden border-2 border-slate-300 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/Jn3yEsc.jpg')}>
+                      <img 
+                        src="https://i.imgur.com/Jn3yEsc.jpg"
+                        alt="Shop 2 before"
+                        className="w-full object-cover object-top h-[400px]"
+                      />
+                    </div>
                   </div>
-                  <div className="rounded-lg overflow-hidden border-2 border-slate-300 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/Jn3yEsc.jpg')}>
-                    <img 
-                      src="https://i.imgur.com/Jn3yEsc.jpg"
-                      alt="Shop 2 before"
-                      className="w-full object-cover object-top h-[400px]"
-                    />
-                  </div>
-                </div>
-                <div className="relative">
-                  <div className="absolute -top-3 left-3 bg-green-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
-                    AFTER
-                  </div>
-                  <div className="rounded-lg overflow-hidden border-2 border-blue-500 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/Mk04P6J.jpg')}>
-                    <img 
-                      src="https://i.imgur.com/Mk04P6J.jpg"
-                      alt="Shop 2 after"
-                      className="w-full object-cover object-top h-[400px]"
-                    />
+                  <div className="relative">
+                    <div className="absolute -top-3 left-3 bg-green-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
+                      AFTER
+                    </div>
+                    <div className="rounded-lg overflow-hidden border-2 border-blue-500 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/Mk04P6J.jpg')}>
+                      <img 
+                        src="https://i.imgur.com/Mk04P6J.jpg"
+                        alt="Shop 2 after"
+                        className="w-full object-cover object-top h-[400px]"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Shop 3 */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="relative">
-                  <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
-                    BEFORE
+              <div className="p-6 bg-slate-50 rounded-xl border-2 border-slate-200">
+                <h4 className="text-lg font-semibold text-slate-900 mb-6">Sanitaer Discount 24, shop created 2005</h4>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="relative">
+                    <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
+                      BEFORE
+                    </div>
+                    <div className="rounded-lg overflow-hidden border-2 border-slate-300 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/igPyJ1d.jpg')}>
+                      <img 
+                        src="https://i.imgur.com/igPyJ1d.jpg"
+                        alt="Shop 3 before"
+                        className="w-full object-cover object-top h-[400px]"
+                      />
+                    </div>
                   </div>
-                  <div className="rounded-lg overflow-hidden border-2 border-slate-300 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/igPyJ1d.jpg')}>
-                    <img 
-                      src="https://i.imgur.com/igPyJ1d.jpg"
-                      alt="Shop 3 before"
-                      className="w-full object-cover object-top h-[400px]"
-                    />
-                  </div>
-                </div>
-                <div className="relative">
-                  <div className="absolute -top-3 left-3 bg-green-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
-                    AFTER
-                  </div>
-                  <div className="rounded-lg overflow-hidden border-2 border-blue-500 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/5bzZEHy.jpg')}>
-                    <img 
-                      src="https://i.imgur.com/5bzZEHy.jpg"
-                      alt="Shop 3 after"
-                      className="w-full object-cover object-top h-[400px]"
-                    />
+                  <div className="relative">
+                    <div className="absolute -top-3 left-3 bg-green-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
+                      AFTER
+                    </div>
+                    <div className="rounded-lg overflow-hidden border-2 border-blue-500 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/5bzZEHy.jpg')}>
+                      <img 
+                        src="https://i.imgur.com/5bzZEHy.jpg"
+                        alt="Shop 3 after"
+                        className="w-full object-cover object-top h-[400px]"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Shop 4 */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="relative">
-                  <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
-                    BEFORE
+              <div className="p-6 bg-slate-50 rounded-xl border-2 border-slate-200">
+                <h4 className="text-lg font-semibold text-slate-900 mb-6">Tröbnitzer Getränkehandel, shop created 2009</h4>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="relative">
+                    <div className="absolute -top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
+                      BEFORE
+                    </div>
+                    <div className="rounded-lg overflow-hidden border-2 border-slate-300 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/pI4Fi7d.jpg')}>
+                      <img 
+                        src="https://i.imgur.com/pI4Fi7d.jpg"
+                        alt="Shop 4 before"
+                        className="w-full object-cover object-top h-[400px]"
+                      />
+                    </div>
                   </div>
-                  <div className="rounded-lg overflow-hidden border-2 border-slate-300 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/pI4Fi7d.jpg')}>
-                    <img 
-                      src="https://i.imgur.com/pI4Fi7d.jpg"
-                      alt="Shop 4 before"
-                      className="w-full object-cover object-top h-[400px]"
-                    />
-                  </div>
-                </div>
-                <div className="relative">
-                  <div className="absolute -top-3 left-3 bg-green-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
-                    AFTER
-                  </div>
-                  <div className="rounded-lg overflow-hidden border-2 border-blue-500 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/CxrWEAZ.jpg')}>
-                    <img 
-                      src="https://i.imgur.com/CxrWEAZ.jpg"
-                      alt="Shop 4 after"
-                      className="w-full object-cover object-top h-[400px]"
-                    />
+                  <div className="relative">
+                    <div className="absolute -top-3 left-3 bg-green-500 text-white px-3 py-1 rounded-md font-bold text-xs z-10">
+                      AFTER
+                    </div>
+                    <div className="rounded-lg overflow-hidden border-2 border-blue-500 shadow cursor-pointer h-[400px]" onClick={() => setEnlargedImage('https://i.imgur.com/CxrWEAZ.jpg')}>
+                      <img 
+                        src="https://i.imgur.com/CxrWEAZ.jpg"
+                        alt="Shop 4 after"
+                        className="w-full object-cover object-top h-[400px]"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
